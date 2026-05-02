@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach } from 'vitest'
 import { getRecords, saveRecord, updateRecord, deleteRecord, getSavedName, saveOperatorName } from './storage'
 import type { PenuanganRecord } from './types'
-import { STORAGE_KEY, NAME_KEY } from './types'
+import { STORAGE_KEY } from './types'
 
 const makeRecord = (overrides: Partial<PenuanganRecord> = {}): PenuanganRecord => ({
   id: 1000,

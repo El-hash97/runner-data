@@ -1,0 +1,13 @@
+{
+  "name": "Runner FC/FCD Checksheet",
+  "short_name": "Runner FCD",
+  "description": "Checksheet penuangan runner FC/FCD — Casting Division TMMIN",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0C10",
+  "theme_color": "#C9A84C",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
