@@ -24,6 +24,7 @@
   letter-spacing: 0.05em;
   border-top: 2px solid transparent;
   transition: color 0.15s, border-color 0.15s;
+  min-height: 44px;
 }
 
 .nav-tab.active {

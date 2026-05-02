@@ -16,5 +16,5 @@ export default function Toast({ message, trigger }: Props) {
     return () => clearTimeout(t)
   }, [trigger])
 
-  return <div className={`toast${visible ? ' visible' : ''}`}>{message}</div>
+  return <div className={`toast${visible ? ' visible' : ''}`} role="status" aria-live="polite" aria-atomic="true">{message}</div>
 }

@@ -26,9 +26,19 @@ body {
   line-height: 1.5;
   min-height: 100dvh;
   overflow-x: hidden;
+  overscroll-behavior: contain;
 }
-button { cursor: pointer; border: none; background: none; font: inherit; color: inherit; }
-input { font: inherit; color: inherit; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+button { cursor: pointer; border: none; background: none; font: inherit; color: inherit; touch-action: manipulation; }
+input { font: inherit; color: inherit; touch-action: manipulation; }
+button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; border-radius: 4px; }
+input:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
 
 #root { display: flex; flex-direction: column; min-height: 100dvh; }
 
@@ -86,6 +96,7 @@ input { font: inherit; color: inherit; }
   font-size: 16px;
   border-radius: var(--radius);
   padding: 16px;
+  min-height: 52px;
   transition: opacity 0.15s;
 }
 .btn-submit:active { opacity: 0.85; }
