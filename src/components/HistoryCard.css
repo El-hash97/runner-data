@@ -41,6 +41,15 @@
 
 .history-card .card-footer { display: flex; justify-content: space-between; align-items: center; }
 .history-card .timestamp { font-size: 12px; color: var(--text-secondary); }
-.history-card .actions { display: flex; gap: 8px; }
-.btn-edit   { font-size: 12px; font-weight: 600; color: var(--blue);     padding: 8px 14px; min-height: 44px; border: 1px solid var(--blue);     border-radius: 6px; }
-.btn-delete { font-size: 12px; font-weight: 600; color: var(--red-team); padding: 8px 14px; min-height: 44px; border: 1px solid var(--red-team); border-radius: 6px; }
+.history-card .actions { display: flex; gap: 6px; }
+
+.btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+}
+.btn-icon.btn-edit   { color: var(--blue);     border: 1px solid var(--blue); }
+.btn-icon.btn-delete { color: var(--red-team); border: 1px solid var(--red-team); }

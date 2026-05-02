@@ -4,6 +4,7 @@
   gap: 10px;
   margin-bottom: 16px;
 }
+
 .dashboard-page .chart-section {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -11,14 +12,48 @@
   padding: 16px;
   margin-bottom: 12px;
 }
+
+.dashboard-page .chart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
 .dashboard-page .chart-title {
   font-size: 13px;
   font-weight: 700;
   color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  margin-bottom: 14px;
 }
+
+.period-filter {
+  display: flex;
+  gap: 4px;
+}
+
+.period-btn {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  background: var(--surface-2);
+  min-height: 28px;
+  letter-spacing: 0.03em;
+  transition: all 0.15s;
+}
+
+.period-btn.active {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: color-mix(in srgb, var(--gold) 12%, var(--surface-2));
+}
+
 .dashboard-page .empty-chart {
   font-size: 13px;
   color: var(--text-secondary);
