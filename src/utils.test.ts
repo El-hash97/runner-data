@@ -13,7 +13,7 @@ const makeRecord = (overrides: Partial<PenuanganRecord> = {}): PenuanganRecord =
   nama: 'Budi',
   shift: 'red',
   time: 'day',
-  runner: 'FC Small',
+  runner: 'FC',
   tanggal: '2026-05-01',
   jam: '08:00',
   shotblast: 'yes',
@@ -65,9 +65,9 @@ describe('getChartDataByTeamDate', () => {
 describe('getChartDataFCvsFCD', () => {
   it('counts FC and FCD per team', () => {
     const records = [
-      makeRecord({ shift: 'red', runner: 'FC Small' }),
-      makeRecord({ shift: 'red', runner: 'FCD Large' }),
-      makeRecord({ shift: 'white', runner: 'FC Medium' }),
+      makeRecord({ shift: 'red', runner: 'FC' }),
+      makeRecord({ shift: 'red', runner: 'FCD' }),
+      makeRecord({ shift: 'white', runner: 'FC' }),
     ]
     const data = getChartDataFCvsFCD(records)
     expect(data.find(d => d.label === 'Red FC')?.count).toBe(1)

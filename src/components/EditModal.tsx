@@ -40,7 +40,7 @@ export default function EditModal({ record, onSave, onClose }: Props) {
         <div className="field">
           <label className="field-label">Waktu</label>
           <ToggleGroup
-            options={[{ value: 'day', label: '☀️ Day', color: '#F6C90E' }, { value: 'night', label: '🌙 Night', color: 'var(--blue)' }]}
+            options={[{ value: 'day', label: 'Day', color: '#F6C90E' }, { value: 'night', label: 'Night', color: 'var(--blue)' }]}
             value={form.time} onChange={v => update('time', v as 'day' | 'night')} />
         </div>
         <div className="field">

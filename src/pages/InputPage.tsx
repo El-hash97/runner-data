@@ -116,8 +116,8 @@ export default function InputPage() {
             <label className="field-label">Waktu</label>
             <ToggleGroup
               options={[
-                { value: 'day',   label: '☀️ Day',   color: '#F6C90E' },
-                { value: 'night', label: '🌙 Night', color: 'var(--blue)' },
+                { value: 'day',   label: 'Day',   color: '#F6C90E' },
+                { value: 'night', label: 'Night', color: 'var(--blue)' },
               ]}
               value={time}
               onChange={v => setTime(v as 'day' | 'night')}

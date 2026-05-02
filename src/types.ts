@@ -10,14 +10,7 @@ export interface PenuanganRecord {
   createdAt: string // ISO 8601
 }
 
-export const RUNNER_TYPES = [
-  'FC Small',
-  'FC Medium',
-  'FC Large',
-  'FCD Small',
-  'FCD Medium',
-  'FCD Large',
-] as const
+export const RUNNER_TYPES = ['FC', 'FCD'] as const
 
 export type RunnerType = typeof RUNNER_TYPES[number]
 
