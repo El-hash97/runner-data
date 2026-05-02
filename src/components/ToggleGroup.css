@@ -1,0 +1,19 @@
+.toggle-group { display: flex; gap: 8px; }
+
+.toggle-btn {
+  flex: 1;
+  padding: 12px 8px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border);
+  background: var(--surface-2);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: all 0.15s;
+}
+
+.toggle-btn.active {
+  border-color: var(--active-color, var(--gold));
+  background: color-mix(in srgb, var(--active-color, var(--gold)) 15%, var(--surface-2));
+  color: var(--active-color, var(--gold));
+}
