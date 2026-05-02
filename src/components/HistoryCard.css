@@ -1,0 +1,46 @@
+.history-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+  margin-bottom: 10px;
+}
+.history-card .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.history-card .operator-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.team-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 100px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.team-badge.red   { background: color-mix(in srgb, var(--red-team)   20%, transparent); color: var(--red-team); }
+.team-badge.white { background: color-mix(in srgb, var(--white-team) 15%, transparent); color: var(--white-team); }
+
+.history-card .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+.tag {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 100px;
+  background: var(--surface-2);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+.tag.shotblast-yes { background: color-mix(in srgb, var(--green) 15%, transparent); color: var(--green); border-color: transparent; }
+
+.history-card .card-footer { display: flex; justify-content: space-between; align-items: center; }
+.history-card .timestamp { font-size: 12px; color: var(--text-secondary); }
+.history-card .actions { display: flex; gap: 8px; }
+.btn-edit   { font-size: 12px; font-weight: 600; color: var(--blue);     padding: 4px 10px; border: 1px solid var(--blue);     border-radius: 6px; }
+.btn-delete { font-size: 12px; font-weight: 600; color: var(--red-team); padding: 4px 10px; border: 1px solid var(--red-team); border-radius: 6px; }
