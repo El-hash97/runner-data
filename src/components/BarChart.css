@@ -1,0 +1,38 @@
+.bar-chart { display: flex; flex-direction: column; gap: 8px; }
+
+.bar-row {
+  display: grid;
+  grid-template-columns: 100px 1fr 32px;
+  align-items: center;
+  gap: 8px;
+}
+
+.bar-row-label {
+  font-size: 11px;
+  color: var(--text-secondary);
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bar-track {
+  height: 24px;
+  background: var(--surface-2);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: var(--bar-color, var(--gold));
+  transition: width 0.4s ease;
+  min-width: 4px;
+}
+
+.bar-count {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
