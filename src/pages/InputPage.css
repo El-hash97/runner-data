@@ -1,0 +1,33 @@
+.input-page .form-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.input-page .autocomplete-list {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  margin-top: 4px;
+  overflow: hidden;
+}
+
+.input-page .autocomplete-item {
+  display: block;
+  width: 100%;
+  padding: 10px 14px;
+  text-align: left;
+  font-size: 14px;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border);
+}
+.input-page .autocomplete-item:last-child { border-bottom: none; }
+.input-page .autocomplete-item:active { background: var(--surface); }
+
+.input-page .datetime-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
