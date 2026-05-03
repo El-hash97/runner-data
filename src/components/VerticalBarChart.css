@@ -1,3 +1,8 @@
+.vchart-outer {
+  width: 100%;
+}
+
+/* Legend */
 .vchart-legend {
   display: flex;
   flex-wrap: wrap;
@@ -37,40 +42,69 @@
   );
 }
 
-.vchart-scroll {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+/* SVG wrapper — needed for absolute tooltip positioning */
+.vchart-svg-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 
-.vchart-inner {
-  display: flex;
-  align-items: flex-end;
-  gap: 6px;
-  min-width: max-content;
-  padding-bottom: 32px;
+/* Tooltip */
+.vchart-tip {
+  position: absolute;
+  min-width: 130px;
+  max-width: 160px;
+  background: #1A2030;
+  border: 1px solid #2A3448;
+  border-radius: 8px;
+  padding: 8px 10px;
+  pointer-events: none;
+  z-index: 10;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
 
-.vchart-group {
+.vchart-tip-date {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.vchart-tip-row {
   display: flex;
-  flex-direction: column;
   align-items: center;
-}
-
-.vchart-bars {
-  display: flex;
-  align-items: flex-end;
-}
-
-.vchart-bar {
-  border-radius: 3px 3px 0 0;
-  flex-shrink: 0;
-  /* width and height set via inline style */
-}
-
-.vchart-label {
-  margin-top: 4px;
-  font-size: 10px;
+  gap: 6px;
+  font-size: 12px;
   color: var(--text-secondary);
-  text-align: center;
-  line-height: 1;
+  margin-bottom: 3px;
+}
+
+.vchart-tip-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.vchart-tip-val {
+  margin-left: auto;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.vchart-tip-empty {
+  font-size: 11px;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.vchart-tip-total {
+  margin-top: 5px;
+  padding-top: 5px;
+  border-top: 1px solid #2A3448;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--gold);
 }
