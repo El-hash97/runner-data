@@ -20,6 +20,7 @@
   transition: all 0.15s;
 }
 .chip.active { background: var(--gold); border-color: var(--gold); color: #0A0C10; }
+.chip:hover:not(.active) { color: var(--text-primary); }
 
 .history-page .empty-state {
   text-align: center;
@@ -31,4 +32,12 @@
   font-size: 13px;
   color: var(--text-secondary);
   margin-bottom: 12px;
+}
+
+@media (min-width: 900px) {
+  .history-page .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 16px;
+  }
 }

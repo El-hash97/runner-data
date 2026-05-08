@@ -13,6 +13,14 @@ const PERIODS: { id: Period; label: string }[] = [
   { id: '30d', label: '30 Hari' },
 ]
 
+const MONTHS_ID = ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember']
+const DAYS_ID   = ['Minggu','Senin','Selasa','Rabu','Kamis','Jumat','Sabtu']
+
+function formatDisplayDate(iso: string): string {
+  const d = new Date(iso + 'T00:00:00')
+  return `${DAYS_ID[d.getDay()]}, ${d.getDate()} ${MONTHS_ID[d.getMonth()]} ${d.getFullYear()}`
+}
+
 export default function DashboardPage() {
   const [period, setPeriod] = useState<Period>('1d')
 
@@ -33,11 +41,20 @@ export default function DashboardPage() {
   const dailyEntries = useMemo(() => getChartDataDaily(records, days), [records, days])
   const hasData = dailyEntries.some(e => e.redFC + e.redFCD + e.whiteFC + e.whiteFCD > 0)
 
-  const chartTitle = period === '1d' ? 'Hari Ini' : period === '7d' ? '7 Hari Terakhir' : '30 Hari Terakhir'
+  const chartPeriodLabel = period === '1d' ? 'Hari Ini' : period === '7d' ? '7 Hari Terakhir' : '30 Hari Terakhir'
 
   return (
     <div className="page dashboard-page">
-      <h1 className="page-title">Dashboard</h1>
+      <div className="dash-header">
+        <div>
+          <h1 className="page-title">Dashboard</h1>
+          <p className="dash-date">{formatDisplayDate(today)}</p>
+        </div>
+        <div className="dash-status">
+          <span className="dash-status-dot" />
+          Live
+        </div>
+      </div>
 
       <div className="stat-grid">
         <StatCard label="Total Penuangan" value={totalCount} accentColor="var(--gold)" />
@@ -48,7 +65,10 @@ export default function DashboardPage() {
 
       <div className="chart-section">
         <div className="chart-header">
-          <span className="chart-title">Penuangan · {chartTitle}</span>
+          <div className="chart-title-group">
+            <span className="chart-title">Grafik Penuangan</span>
+            <span className="chart-subtitle">{chartPeriodLabel}</span>
+          </div>
           <div className="period-filter">
             {PERIODS.map(p => (
               <button
@@ -62,7 +82,16 @@ export default function DashboardPage() {
           </div>
         </div>
         {!hasData
-          ? <p className="empty-chart">Belum ada data</p>
+          ? (
+            <div className="empty-chart-wrap">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true" style={{ color: 'var(--border)' }}>
+                <rect x="3" y="12" width="4" height="9" rx="1"/>
+                <rect x="10" y="6" width="4" height="15" rx="1"/>
+                <rect x="17" y="3" width="4" height="18" rx="1"/>
+              </svg>
+              <p className="empty-chart">Belum ada data untuk periode ini</p>
+            </div>
+          )
           : <VerticalBarChart entries={dailyEntries} />
         }
       </div>

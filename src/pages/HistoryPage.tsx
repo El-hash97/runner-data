@@ -63,9 +63,13 @@ export default function HistoryPage() {
 
       {displayed.length === 0
         ? <p className="empty-state">Belum ada data penuangan</p>
-        : displayed.map(r => (
-            <HistoryCard key={r.id} record={r} onEdit={setEditTarget} onDelete={handleDelete} />
-          ))
+        : (
+          <div className="cards-grid">
+            {displayed.map(r => (
+              <HistoryCard key={r.id} record={r} onEdit={setEditTarget} onDelete={handleDelete} />
+            ))}
+          </div>
+        )
       }
 
       <EditModal record={editTarget} onSave={handleSave} onClose={() => setEditTarget(null)} />

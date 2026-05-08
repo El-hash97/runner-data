@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(python3 \"C:\\\\Users\\\\El\\\\.claude\\\\plugins\\\\cache\\\\ui-ux-pro-max-skill\\\\ui-ux-pro-max\\\\2.5.0\\\\src\\\\ui-ux-pro-max\\\\scripts\\\\search.py\" \"industrial dark mobile-first PWA casting production\" --design-system -p \"Runner FC/FCD Checksheet\" -f markdown 2>&1 | Select-Object -First 150)",
+      "Bash(node -e ' *)",
+      "Bash(npm create *)",
+      "Bash(npx create-vite *)",
+      "Bash(mkdir -p /tmp/vite-scaffold)",
+      "Read(//tmp/**)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(python3 *)",
+      "Bash(npx tsc *)"
+    ]
+  }
+}

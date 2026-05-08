@@ -31,3 +31,9 @@
   grid-template-columns: 1fr 1fr;
   gap: 12px;
 }
+
+@media (min-width: 768px) {
+  .input-page form {
+    max-width: 560px;
+  }
+}
