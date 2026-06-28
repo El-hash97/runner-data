@@ -1,18 +1,22 @@
 :root {
-  --bg: #0A0C10;
-  --surface: #11141A;
-  --surface-2: #1A1F2B;
-  --gold: #C9A84C;
-  --gold-dim: #9A7A32;
+  /* Binance design tokens */
+  --bg: #0b0e11;
+  --surface: #1e2329;
+  --surface-2: #2b3139;
+  --gold: #fcd535;
+  --gold-dim: #f0b90b;
+  --gold-on: #181a20;
   --red-team: #E8343A;
   --white-team: #D4DAF0;
-  --green: #3ECF8E;
+  --green: #0ecb81;
   --blue: #3A7BD5;
-  --text-primary: #E2E8F0;
-  --text-secondary: #8892AA;
-  --border: #1E2430;
+  --text-primary: #eaecef;
+  --text-secondary: #707a8a;
+  --text-muted-strong: #929aa5;
+  --border: #2b3139;
   --radius: 12px;
   --radius-sm: 8px;
+  --radius-btn: 6px;
   --nav-h: 64px;
   --sidebar-w: 220px;
 }
@@ -114,15 +118,17 @@ input:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
 .btn-submit {
   width: 100%;
   background: var(--gold);
-  color: #0A0C10;
+  color: var(--gold-on);
   font-weight: 700;
-  font-size: 16px;
-  border-radius: var(--radius);
-  padding: 16px;
-  min-height: 52px;
-  transition: opacity 0.15s;
+  font-size: 15px;
+  border-radius: var(--radius-btn);
+  padding: 14px 24px;
+  min-height: 48px;
+  letter-spacing: 0;
+  transition: background 0.15s, opacity 0.15s;
 }
-.btn-submit:active { opacity: 0.85; }
-.btn-submit:disabled { opacity: 0.4; cursor: not-allowed; }
+.btn-submit:hover { background: var(--gold-dim); }
+.btn-submit:active { opacity: 0.88; }
+.btn-submit:disabled { opacity: 0.35; cursor: not-allowed; }
 
 .field { margin-bottom: 16px; }
